@@ -64,7 +64,7 @@ private val darkColorScheme = darkColorScheme(
 @Composable
 fun AlarmAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = false,
+    dynamicColor: Boolean = true,
     content: @Composable() () -> Unit
 ) {
 
