@@ -10,9 +10,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
 import com.example.alarmapp.feature_note.presentation.alarm_list_screen.AlarmListScreen
 import com.example.alarmapp.ui.theme.AlarmAppTheme
@@ -28,6 +30,8 @@ class MainActivity : ComponentActivity() {
     companion object {
         const val ALARM_LIST_SCREEN = "ALARM_LIST_SCREEN"
         const val ALARM_ADD_EDIT_SCREEN = "ALARM_ADD_EDIT_SCREEN"
+        const val ALARM_ID_KEY = "ALARM_ID"
+
     }
 
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -40,12 +44,20 @@ class MainActivity : ComponentActivity() {
                     composable(route = ALARM_LIST_SCREEN) {
                         AlarmListScreen(navController = navController)
                     }
-                    composable(route = ALARM_ADD_EDIT_SCREEN) {
-
+                    composable(
+                        route = "$ALARM_ADD_EDIT_SCREEN?$ALARM_ID_KEY={$ALARM_ID_KEY}",
+                        arguments = listOf(
+                            navArgument(name = ALARM_ID_KEY) {
+                                type = NavType.IntType
+                                defaultValue = -1
+                            }
+                        )
+                    ) {
+                        val alarmId = it.arguments?.getInt(ALARM_ID_KEY) ?: -1
+                        // TODO -> Add_edit_Screen(navController, alarmId)
                     }
                 }
             }
-
         }
     }
 }
