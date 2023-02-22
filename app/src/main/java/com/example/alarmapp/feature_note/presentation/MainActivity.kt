@@ -16,8 +16,13 @@ import androidx.navigation.compose.rememberNavController
 
 import com.example.alarmapp.feature_note.presentation.alarm_list_screen.AlarmListScreen
 import com.example.alarmapp.ui.theme.AlarmAppTheme
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 
 @OptIn(ExperimentalMaterial3Api::class)
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     companion object {

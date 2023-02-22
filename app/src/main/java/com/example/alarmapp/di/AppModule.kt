@@ -6,6 +6,10 @@ import androidx.room.Room
 import com.example.alarmapp.feature_note.data.data_base.AlarmDatabase
 import com.example.alarmapp.feature_note.data.repository.AlarmRepositoryImpl
 import com.example.alarmapp.feature_note.domain.repository.AlarmRepository
+import com.example.alarmapp.feature_note.domain.use_case.AddAlarm
+import com.example.alarmapp.feature_note.domain.use_case.AlarmUseCases
+import com.example.alarmapp.feature_note.domain.use_case.DeleteAlarm
+import com.example.alarmapp.feature_note.domain.use_case.GetAlarms
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +34,16 @@ class AppModule {
     @Singleton
     fun provideAlarm(db: AlarmDatabase): AlarmRepository {
         return AlarmRepositoryImpl(db.alarmDao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAlarmUseCases(repository: AlarmRepository): AlarmUseCases {
+        return AlarmUseCases(
+            addAlarm = AddAlarm(repository),
+            getAlarms = GetAlarms(repository),
+            deleteAlarm = DeleteAlarm(repository)
+        )
     }
 
 }
