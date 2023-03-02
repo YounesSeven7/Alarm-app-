@@ -9,6 +9,7 @@ import com.example.alarmapp.feature_note.domain.repository.AlarmRepository
 import com.example.alarmapp.feature_note.domain.use_case.AddAlarm
 import com.example.alarmapp.feature_note.domain.use_case.AlarmUseCases
 import com.example.alarmapp.feature_note.domain.use_case.DeleteAlarm
+import com.example.alarmapp.feature_note.domain.use_case.GetAlarm
 import com.example.alarmapp.feature_note.domain.use_case.GetAlarms
 import dagger.Module
 import dagger.Provides
@@ -42,6 +43,7 @@ class AppModule {
         return AlarmUseCases(
             addAlarm = AddAlarm(repository),
             getAlarms = GetAlarms(repository),
+            getAlarm = GetAlarm(repository),
             deleteAlarm = DeleteAlarm(repository)
         )
     }

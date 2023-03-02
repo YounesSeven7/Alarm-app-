@@ -35,7 +35,7 @@ private val lightColorScheme = lightColorScheme(
     surface = Grey90,
     onSurface = Color.Black,
     surfaceVariant = Color.White,
-    onSurfaceVariant = Color.Black,
+    onSurfaceVariant = Color.Black
 )
 
 
@@ -58,7 +58,7 @@ private val darkColorScheme = darkColorScheme(
     surface = Color.Black,
     onSurface = Color.White,
     surfaceVariant = Grey90,
-    onSurfaceVariant = Grey10,
+    onSurfaceVariant = Grey10
 )
 
 @Composable
@@ -73,10 +73,14 @@ fun AlarmAppTheme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context).copy(
                 background = Color.Black,
-                surface = Color.Black
+                surface = Color.Black,
+                surfaceVariant = Grey90,
+                onSurfaceVariant = Grey10
             ) else dynamicLightColorScheme(context).copy(
                 background = Grey90,
-                surface = Grey90
+                surface = Grey90,
+                surfaceVariant = Color.White,
+                onSurfaceVariant = Color.Black
             )
         }
 

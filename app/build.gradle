@@ -85,6 +85,9 @@ dependencies {
     // Dagger hilt
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
+
+    // data picker
+    implementation 'com.chargemap.compose:numberpicker:1.0.3'
 }
 
 kapt {

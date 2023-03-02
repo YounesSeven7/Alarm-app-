@@ -1,4 +1,4 @@
-package com.example.alarmapp.feature_note.presentation.alarm_list_screen
+package com.example.alarmapp.feature_note.presentation.alarm_list_screen.event
 
 import com.example.alarmapp.feature_note.domain.model.Alarm
 
