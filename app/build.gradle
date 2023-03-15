@@ -88,6 +88,11 @@ dependencies {
 
     // data picker
     implementation 'com.chargemap.compose:numberpicker:1.0.3'
+
+    def media3_version = "1.0.0-rc02"
+
+    // For media playback using ExoPlayer
+    implementation "androidx.media3:media3-exoplayer:$media3_version"
 }
 
 kapt {

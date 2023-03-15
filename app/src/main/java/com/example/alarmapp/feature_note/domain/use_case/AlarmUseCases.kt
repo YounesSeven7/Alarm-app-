@@ -5,5 +5,4 @@ data class AlarmUseCases(
     val getAlarms: GetAlarms,
     val getAlarm: GetAlarm,
     val deleteAlarm: DeleteAlarm
-
 )

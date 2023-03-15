@@ -10,8 +10,8 @@ class AlarmRepositoryImpl(private val dao: AlarmDao): AlarmRepository {
         return dao.getAlarms()
     }
 
-    override fun getAlarm(id: Int): Alarm? {
-        TODO("Not yet implemented")
+    override suspend fun getAlarm(id: Int): Alarm? {
+        return dao.getAlarm(id)
     }
 
     override suspend fun insertAlarm(alarm: Alarm) {

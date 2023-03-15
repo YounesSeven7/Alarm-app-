@@ -10,11 +10,11 @@ public data class Alarm(
     val name: String,
     val time: Time,
     val days: Int = allDays,
-    val isActive: Boolean
+    val isActive: Boolean = true
 ) {
     companion object {
         val daysFirstLetterList = listOf('S', 'M', 'T', 'W', 'T', 'F', 'S')
         val daysNamesList = listOf("Sun" , "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
-        const val allDays = 7604321
+        const val allDays = 7654321
     }
 }
